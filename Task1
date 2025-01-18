@@ -1,1 +1,211 @@
+﻿МІНІСТЕРСТВО ОСВІТИ І НАУКИ УКРАЇНИ
+
+ХАРКІВСЬКИЙ НАЦІОНАЛЬНИЙ
+УНІВЕРСИТЕТ РАДІОЕЛЕКТРОНІКИ
+
+Кафедра «Програмна інженерія»
+
+
+ЗВІТ
+до лабораторної роботи №1 з дисципліни
+«Аналіз та рефакторинг коду»
+На тему: «Розробка Vision and Scope»
+
+
+
+Виконав:                                              		       Перевірив:
+ст. гр. ПЗПІ-22-10 				               ас. кафедри ПІ 
+Петриков Олександр Дмитрович 		Дашенков Дмитро Сергійович
+
+
+Харків 2024
+Vision and Scope Document
+for AquaGuard
+Version 1.0 approved
+Prepared by Петриков Олександр
+ХНУРЕ
+10.12.24
+Table of Contents	2
+ Revision History	2
+Business Requirements	3
+ 1.1.	Background	3
+ 1.2.	Business Opportunity	3
+ 1.3.	Business Objectives and Success Criteria	4
+ 1.4.	Customer or Market Needs	4
+ 1.5.	Business Risks	4
+Vision of the Solution	5
+ 2.1.	Vision Statement	5
+ 2.2.	Major Features	5
+ 2.3.	Assumptions and Dependencies	5
+Scope and Limitations	6
+ 3.1.	Scope of Initial Release	7
+ 3.2.	Scope of Subsequent Releases	7
+ 3.3.	Limitations and Exclusions	7
+Business Context	8
+ 4.1.	Stakeholder Profiles	8
+ 4.2.	Project Priorities	9
+ 4.3.	Operating Environment	9
+Revision History
+1 Business Requirements
+1.1. Background
+Зі зростанням глобальної потреби у водних ресурсах та їх обмеженістю, виникає необхідність у впровадженні ефективних рішень для оптимізації споживання води, добрив в аграрному секторі та догляду за рослинами. Неефективне використання призводить до:
+Перевитрати ресурсів
+Зниження врожайності через надмірний або недостатній кількості.
+Негативного впливу на навколишнє середовище через ерозію ґрунту.
+Система смарт поливу також допоможе вирішити проблеми шляхом автоматизації та оптимізації поливу за допомогою даних, отриманих з датчиків.
+1.2.Business Opportunity
+RainMachine: Смарт-контролер для поливу, що використовує погодні дані. Обмеження: залежність від сторонніх погодних сервісів.
+GreenIQ: Програма для управління поливом через IoT-рішення. Обмеження: висока ціна обладнання.
+Xiaomi Smart Irrigation: Компактна система для автоматизації поливу на невеликих ділянках. Обмеження: не підтримує інтеграцію з великими аграрними системами.
+AgriSense: забезпечує моніторинг вологості, але не пропонує інтерактивного управління через веб- та мобільні додатки.
+CropWaterPro: підтримує основні функції моніторингу, проте не інтегрується з популярними хмарними платформами для зберігання даних
+1.3 Business Objectives and Success Criteria
+Кількісні бізнес-цілі:
+- Досягнення економії води на 30-40% порівняно з традиційними системами поливу
+- Збільшення врожайності на 20-25% завдяки оптимізації режиму поливу
+- Досягнення окупності інвестицій протягом 2 сезонів використання
+- Залучення 1000 активних користувачів протягом першого року роботи
+- Досягнення рівня задоволеності користувачів 90% і вище
+Критерії успіху:
+- Стабільна робота системи з точністю вимірювань не менше 95%
+- Час відгуку системи на критичні зміни вологості - не більше 5 хвилин
+- Успішне впровадження у щонайменше 10 пілотних господарствах
+- Отримання позитивних відгуків від 80% користувачів після першого сезону
+
+1.4. Customer or Market Needs
+- Доступна система автоматизації поливу
+- Простий інтерфейс управління
+- Можливість віддаленого контролю
+- Економія води та електроенергії
+- Детальна аналітика та звітність
+- Можливість управління кількома локаціями
+- Простота встановлення та налаштування
+- Доступна цінова політика
+- Автоматичний режим роботи
+- Мобільний додаток з push-повідомленнями
+1.5 Business Risks
+- Можливі збої в роботі датчиків у складних погодних умовах
+- Проблеми з підключенням до мережі в віддалених локаціях
+- Ризик кіберзагроз та несанкціонованого доступу
+- Можливі затримки у виробництві та постачанні обладнання
+- Потенційні проблеми з сервісним обслуговуванням у віддалених регіонах
+- Коливання цін на компоненти
+2 Vision of the Solution
+2.1 Vision Statement
+Система створена для автоматизації та оптимізації процесу поливу рослин. Основною метою є забезпечення користувачів зручним інструментом для моніторингу стану рослин і керування поливом у режимі реального часу.
+2.2 Major Features
+MF-1 Управління та історія даних  з IoT-датчиків (вологості, температури, pH ґрунту).
+MF-2 На основі заданих параметрів визначається потреба в поливі для кожної зони.
+MF-3 Веб- та мобільні клієнти надають користувачеві інструменти для моніторингу та керування процесом.
+MF-4 Користувач отримує повідомлення про стан системи через push-сповіщення.
+2.3 Assumptions and Dependencies
+
+Припущення:
+- Користувачі мають стабільний доступ до інтернету для передачі даних з датчиків.
+Залежність:
+- Якість та швидкість передачі даних залежить від покриття мобільної мережі в зоні встановлення системи.
+
+Припущення:
+- IoT-пристрої здатні працювати автономно при тимчасовій втраті зв'язку.
+Залежність:
+- Надійність локального збереження даних залежить від об'єму вбудованої пам'яті пристроїв.
+
+- Датчики вологості зберігатимуть точність вимірювань протягом всього сезону.
+Залежність:
+- Точність вимірювань залежить від якості компонентів та регулярного калібрування.
+
+Припущення:
+- Системи поливу користувачів сумісні з нашими контролерами
+Залежність:
+- Необхідність розробки адаптерів для різних типів систем поливу
+
+Припущення:
+- Користувачі мають доступ до стабільного джерела електроживлення.
+Залежність:
+- Необхідність розробки системи резервного живлення для критичних компонентів.
+3 Scope and Limitations
+3.1 Scope of Initial Release
+FE1 Внутрішня авторизація
+FE2  Збір і обробка даних з датчиків вологості, температури та інших показників.
+FE3 Визначення необхідності поливу за заданими алгоритмами.
+FE4 Передача команд до IoT-контролера для включення або відключення системи поливу.
+FE5 Збереження історії даних для подальшого аналізу.
+FE6 Сповіщення про стан системи
+3.2 Scope of Subsequent Releases
+FE7 Розширена аналітика на основі штучного інтелекту
+FE8 Інтеграція з додатковими IoT-датчиками та пристроями
+FE9 Геолокаційні функції
+FE10 Спільнота користувачів та обмін даними
+3.3 Limitations and Exclusions
+FE11 Інтеграція з погодою в реальному часі
+4. Business Context
+4.1 Stakeholder Profiles
+Stakeholder
+Major Value
+Attitudes
+Major Interests
+Constraints
+Executives
+Increased revenue, enhanced market presence.
+See product as an avenue to increase operational efficiency and market competitiveness.
+Rapid deployment, return on investment, scalability.
+
+
+Farmers
+Simplified irrigation management, reduced water consumption.
+Highly receptive, especially to cost savings and automation.
+Easy setup, compatibility with existing systems, reliability.
+Must work in rural areas with poor internet connectivity.
+Technical Team
+Centralized monitoring and maintenance.
+Supportive if the system provides long-term savings and low maintenance costs.
+Ease of integration with IoT devices, stable APIs.
+Must support open IoT standards and protocols.
+Environmental Agencies
+Enhanced sustainability, reduced environmental impact.
+Supportive if the system aligns with environmental goals.
+Accurate reporting, compliance with regulations.
+Must generate reports compatible with national standards.
+Investors
+High return on investment.
+Supportive of innovative technologies that promise market expansion.
+Scalable architecture, competitive edge in market.
+Time to market should not exceed 12 months.
+
+
+4.2 Project Priorities
+Dimension
+Driver
+Constraint
+Degree of Freedom
+Schedule
+Release 1.0 available by Q3.
+Must not exceed Q4.
+Minor delays acceptable if quality is maintained.
+Features
+Core features (monitoring, automated irrigation).
+Must include 100% of MVP features.
+Additional non-critical features can be deferred.
+Quality
+Reliable and accurate system.
+95% of user tests must pass.
+Optimizations can be rolled out in updates.
+Staff
+Maximize productivity.
+Maximum team size: 8 developers, 3 testers.
+Additional short-term contractors if needed.
+Cost
+Budget-efficient solution.
+
+
+Budget can exceed by 10% with executive approval.
+
+
+4.3 Operating Environment
+Серверна частина: Node.js, Express.js.
+База даних: MongoDB.
+Тестування API: Postman.
+Веб-інтерфейс: React.js, Tailwind CSS.
+Мобільний застосунок: Kotlin (для Android).
+IoT: Arduino/Raspberry Pi для управління поливом
 
